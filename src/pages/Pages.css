@@ -1,0 +1,194 @@
+/* Page Style */
+.contact-us-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    padding: 0 20px;
+    position: relative;
+  }
+  
+  .contact-form-container {
+    background: rgba(250, 100, 200, 0.7); 
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 800px;
+  }
+  
+  .page-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .contact-form h2,
+  .contact-info h2,
+  .location h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+  
+  .contact-form,
+  .contact-info,
+  .location {
+    margin-bottom: 30px;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  .contact-form button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  .contact-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  .contact-info p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .social-media a {
+    display: block;
+    font-size: 1.1rem;
+    color: #007bff;
+    text-decoration: none;
+    margin: 5px 0;
+  }
+  
+  .social-media a:hover {
+    text-decoration: underline;
+  }
+  
+  .map iframe {
+    border: none;
+    border-radius: 10px;
+  }
+  
+  @media (max-width: 768px) {
+    .contact-form-container {
+      padding: 20px;
+    }
+  
+    .page-title {
+      font-size: 2rem;
+    }
+  }
+  
+.settings-page {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+  
+.settings-page.light {
+    --background-color: #ffffff;
+    --text-color: #000000;
+}
+  
+.settings-page.medium {
+    --background-color: #f0f0f0;
+    --text-color: #333333;
+}
+  
+.settings-page.dark {
+    --background-color: #1a1a1a;
+    --text-color: #ffffff;
+}
+  
+.settings-page.gOne {
+    --background-color: #f5f7fa;
+    --text-color: #2c3e50;
+}
+  
+.settings-page.gTwo {
+    --background-color: #282c34;
+    --text-color: #61dafb;
+}
+
+.settings-page.gThree {
+    --background-color: #4a90e2;
+    --text-color: #ffffff;
+}
+  
+.settings-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+  
+.settings-section {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid var(--text-color);
+    border-radius: 8px;
+}
+  
+.theme-options,
+.font-options {
+    margin-top: 10px;
+}
+
+.setting-background{
+    background: rgba(0, 165, 174, 0.7); 
+    padding: 10px;
+    border-radius: 10px;
+}
+  
+.theme-selector span {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin: 0 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+  
+.theme-selector .activeTheme {
+    border-color: var(--text-color);
+}
+  
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+.btn-settings {
+    background-color: var(--text-color);
+    color: var(--background-color);
+}
+  
+.btn-danger {
+    background-color: red;
+    color: white;
+}
+  
+.btn:hover {
+    opacity: 0.8;
+}
+  

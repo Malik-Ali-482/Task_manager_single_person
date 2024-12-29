@@ -1,43 +1,45 @@
-.App{
+/* General Styles */
+.App {
   min-height: 100vh;
 }
 
-.container{
+.container {
   max-width: 1200px;
   margin: auto;
   padding: 10px 10px;
 }
 
-header{
+/* Header Section */
+header {
   min-height: 70px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 15px;
   margin-bottom: 70px;
-  background-color: #FFFFFF;
+  background-color: #fff;
   border-radius: 5px;
   box-shadow: var(--box-shadow);
 }
 
-header .logo{
+header .logo {
   display: flex;
   align-items: center;
 }
 
-header .logo img{
+header .logo img {
   max-width: 40px;
   cursor: pointer;
 }
 
-header .logo span{
+header .logo span {
   font-size: 22px;
   margin-left: 7px;
-  cursor: pointer;
   color: #525252;
+  cursor: pointer;
 }
 
-header .themeSelector span{
+header .themeSelector span {
   height: 20px;
   width: 20px;
   border-radius: 50%;
@@ -47,153 +49,832 @@ header .themeSelector span{
   border: 1px solid #dfdfdf;
 }
 
-header .themeSelector .activeTheme{
+header .themeSelector .activeTheme {
   height: 30px;
   width: 30px;
 }
 
+/* Add Task Section */
 .addTask {
   padding: 20px 15px;
-  border-radius: 5px;
-  background-color: #FFFFFF;
-  max-width: 500px;
+  background-color: #fff;
+  max-width: 800px;
   margin: 20px auto;
+  border-radius: 5px;
   box-shadow: var(--box-shadow);
 }
 
-.addTask form{
+.addTask form {
   display: flex;
   gap: 7px;
 }
 
-.addTask form input{
+.addTask form input {
   flex-grow: 1;
-  padding: 5px 5px;
+  padding: 5px;
   border: 1px solid #eaeaea;
   border-radius: 5px;
   font-size: 18px;
 }
 
-.addTask form input:focus{
+.addTask form input:focus {
   outline: 0.5px solid #eaeaea;
 }
 
-.addTask form button{
+.addTask form button {
   background-color: #03ba5c;
-  color: #FFFFFF;
+  color: #fff;
   border: none;
   padding: 5px 20px;
   border-radius: 5px;
-  cursor: pointer;
   font-size: 18px;
+  cursor: pointer;
 }
 
-.addTask form button:hover{
+.addTask form button:hover {
   background-color: #03b056;
 }
 
-.showTask{
-  padding: 20px 15px;
-  border-radius: 5px;
-  background-color: #FFFFFF;
-  margin: 20px auto;
-  box-shadow: var(--box-shadow);
+/* Task List Section */
+.showTask {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.showTask div.head{
-  padding: 10px 0px 20px 0px;
-  border-bottom: 1px solid #dfdfdf;
+.show-tasks-on-page{
+  margin: 100px;
+}
+
+.task-card {
+  background: #fff;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.task-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.task-header h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.task-category {
+  font-size: 0.9rem;
+  color: #666;
+  background: #e7f3ff;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+}
+
+.task-time {
+  font-size: 0.8rem;
+  color: #999;
+  margin-bottom: 1rem;
+}
+
+.task-actions {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 10px; /* Adds space between buttons */
 }
 
-.showTask div.head div{
-  flex-grow: 1;
+.task-actions .btn {
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
 }
 
-.showTask .title{
-  font-size: 18px;
-  font-weight: 600;
-  user-select: none;
-}
-
-.showTask .count{
-  background-color: #dfdfdf;
-  color: #525252;
-  padding: 5px 10px;
-  border-radius: 50%;
-  margin-left: 10px;
-  user-select: none;
-}
-
-.showTask .clearAll{
-  background-color: #0f6af3;
-  color: #FFFFFF;
-  padding: 5px 10px;
+.btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border: none;
   border-radius: 5px;
   cursor: pointer;
-  border: 0px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* General styles for btn-navbar */
+.btn-navbar {
+  display: inline-block;
+  padding: 10px 20px;
   font-size: 16px;
-}
-
-.showTask .clearAll:hover{
-  background-color: #1061db;
-}
-
-.showTask ul{
-  margin: 30px 5px 20px 5px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 15px;
-}
-
-.showTask li{
-  padding: 15px 10px;
-  border-bottom: 1px solid #e5e5e5;
-  display: flex;
-  gap: 5px;
-  width: 350px;
-  box-shadow: var(--box-shadow);
+  font-weight: 500;
+  color:#d82148;
+  border: none;
   border-radius: 5px;
-  border-left: 5px solid #1365dfaf;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s, transform 0.2s;
+  cursor: pointer;
 }
 
-.showTask li:hover{
-  background-color: #f8f8f8;
+.btn-navbar:hover {
+  background-color: #64b1ff; 
+  transform: translateY(-2px); /* Slight lift on hover */
 }
 
-.showTask li p{
-  flex-grow: 1;
+.edit-btn {
+  align-items: center;
+  max-width: 80px;
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.edit-btn:hover {
+  background-color: #45a049;
+}
+
+.delete-btn {
+  align-items: center;
+  max-width: 80px;
+  background-color: #f44336;
+  color: #fff;
+}
+
+.delete-btn:hover {
+  background-color: #e53935;
+}
+
+.complete-btn {
+  max-width: 100px;
+  background-color: #009826;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  margin-right: 8px; /* Add margin between buttons */
+}
+
+.complete-btn:hover {
+  background-color: #268d00;
+}
+
+
+
+.no-tasks {
+  font-size: 1.2rem;
+  color: #666;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.late-task {
+  border-left: 5px solid #d82148;
+  background-color: #ffe6e6;
+}
+
+.late-text {
+  color: #d82148;
+  font-weight: bold;
+}
+
+/* Home Page Styles */
+.home {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #4e73df, #1cc88a);
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-top: 0;
+}
+
+/* Statistics Section */
+.statistics {
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+
+.statistics h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.stats-overview {
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  color: #555;
 }
 
-.showTask li .name{
-  font-size: 18px;
+.statistic-container{
+  background-color: whitesmoke;
   padding-bottom: 5px;
+  margin-bottom: 25px;
 }
 
-.showTask li .time{
-  font-size: 12px;
-  color: #737373;
+.stats-overview p {
+  margin: 0;
 }
 
-.showTask i.bi-pencil-square{
-  font-size: 18px;
-  color: #1363DF;
-  cursor: pointer;
+/* Graphs */
+.graphs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 2rem;
 }
 
-.showTask i.bi-trash{
-  font-size: 18px;
-  color: #D82148;
-  cursor: pointer;
+.bar-graph,
+.pie-chart {
+  width: 45%;
+  min-width: 300px;
+  background-color: white;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
 
-@media only screen and (max-width: 800px) {
-  .showTask li{
+.bar-graph h3,
+.pie-chart h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* Footer */
+.footer {
+  background-color: #333;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+  font-size: 14px;
+}
+
+.footer-section {
+  width: 23%;
+  padding: 10px;
+}
+
+.footer h3 {
+  color: #f1f1f1;
+}
+
+.footer p {
+  margin: 20px 0;
+  font-size: 15px;
+}
+
+.footer a {
+  color: #f1f1f1;
+  text-decoration: none;
+}
+
+.footer li{
+  margin: 10px 0;
+  font-size: 15px;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer iframe {
+  border: none;
+  max-height: 150px;
+}
+
+@media (max-width: 768px) {
+  .footer-section {
+    width: 48%;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-section {
     width: 100%;
   }
 }
+
+.sub-footer {
+  border-top: 2px solid white; /* White line between sections */
+  margin-top: 20px;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.sub-footer p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+/* Style for completed tasks */
+.task.completed {
+  background-color: #d3f9d8; /* Greenish background for completed tasks */
+  text-decoration: line-through; /* Strikethrough effect */
+}
+
+.task-actions button[disabled] {
+  background-color: #ccc; /* Disabled button style */
+  cursor: not-allowed;
+}
+
+.task-filters {
+  display: grid;
+  place-items: center;     /* This centers both horizontally and vertically */
+  position: relative;
+}
+
+
+button {
+  margin: 5px;
+  padding: 8px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.task-filters {
+  margin-top: 20px;
+}
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+
+  .statistics h2 {
+    font-size: 1.8rem;
+  }
+
+  .stats-overview {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .graphs {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .bar-graph,
+  .pie-chart {
+    width: 100%;
+    min-width: 100%;
+  }
+}
+
+/* General Page Styles */
+.about-us {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header Section */
+.about-header {
+  background-color: #4e73df;
+  color: white;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.about-header h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.about-header p {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* Main Content */
+.about-content {
+  padding: 4rem 2rem;
+}
+
+.about-section {
+  margin-bottom: 3rem;
+}
+
+.about-section h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.about-section .section-content {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.about-section ul {
+  font-size: 1.2rem;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.about-section ul li {
+  margin: 0.5rem 0;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.about-section ul li::before {
+  content: '✔';
+  color: #4e73df;
+  position: absolute;
+  left: 0;
+  font-size: 1.5rem;
+}
+
+/* Team Section */
+.team {
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.team-member {
+  text-align: center;
+  max-width: 250px;
+  margin: 0 auto;
+}
+
+.team-member img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.team-member h3 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.team-member p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* General Section Styling */
+.categories {
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.categories h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Category Filter */
+.category-filter {
+  margin-bottom: 30px;
+}
+
+.category-filter label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.dropdown-button {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.dropdown-content {
+  background-color: #ffffff; /* Solid white for clean look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Softer shadow for modern look */
+  padding: 15px; /* Adequate spacing for content */
+  border: 1px solid #ddd; /* Subtle border for box */
+  border-radius: 5px; /* Rounded corners for aesthetics */
+  width: 200px; /* Fixed width for consistency */
+  display: flex;
+  flex-direction: column; /* Stack the checkboxes vertically */
+  gap: 8px; /* Space between checkboxes */
+  max-height: 300px; /* Limit height to avoid overflow */
+  overflow-y: auto; /* Add scroll for long content */
+  z-index: 1;
+  margin-left: 100px;
+}
+
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+
+/* Time Range Filter */
+.time-filter {
+  margin-top: 20px;
+}
+
+.time-filter label {
+  font-size: 16px;
+  color: #333;
+}
+
+select {
+  width: 200px;
+  padding: 8px;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* Filtered Tasks */
+.filtered-tasks {
+  margin-top: 40px;
+}
+
+.filtered-tasks p {
+  font-size: 16px;
+  color: #888;
+  text-align: center;
+}
+
+.register-form {
+  text-align: center;
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.register-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.register-form input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--text-color);
+}
+
+.settings-section {
+  margin-top: 20px;
+}
+
+.contact-us-page {
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+}
+
+h1, h2 {
+  text-align: center;
+  color: #333;
+}
+
+.contact-form, .contact-info, .location {
+  margin: 2rem 0;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.contact-form label {
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.contact-form button {
+  padding: 0.5rem 2rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.contact-form button:hover {
+  background-color: #0056b3;
+}
+
+.contact-info {
+  text-align: center;
+}
+
+.social-media a {
+  display: block;
+  margin: 0.5rem 0;
+  color: #007bff;
+}
+
+.social-media a:hover {
+  text-decoration: underline;
+}
+
+.map iframe {
+  width: 100%;
+  height: 400px;
+  border: none;
+}
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .checkbox-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  select {
+    width: 100%;
+  }
+
+  .about-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .about-header p {
+    font-size: 1.2rem;
+  }
+
+  .about-content {
+    padding: 2rem;
+  }
+
+  .about-section h2 {
+    font-size: 2rem;
+  }
+
+  .team {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .team-member {
+    margin-bottom: 2rem;
+  }
+
+  .team-member img {
+    width: 120px;
+    height: 120px;
+  }
+}
+/* Features Section */
+.features {
+  background-color: #f7f7f7;
+  padding: 50px 20px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.features h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.features ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.features li {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 15px;
+  padding-left: 25px;
+  position: relative;
+}
+
+.features li::before {
+  content: "✔";
+  color: #4BC0C0;
+  font-size: 1.5rem;
+  position: relative;
+  margin-bottom: 15px;
+  padding-right: 10px;
+}
+
+.features li:hover {
+  color: #333;
+  background-color: #e2f7f3;
+  border-radius: 5px;
+  padding-left: 30px;
+  transition: all 0.3s ease;
+}
+
+.features .highlight {
+  color: #36A2EB;
+  font-weight: bold;
+}
+
+.features .feature-description {
+  font-size: 1.1rem;
+  color: #777;
+  margin-top: 10px;
+  line-height: 1.8;
+}
+
+
+
+/* Media Queries */
+@media only screen and (max-width: 800px) {
+  .task-card {
+    width: 100%;
+  }
+}
+
+

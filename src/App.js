@@ -1,65 +1,56 @@
-import { useState, useEffect } from 'react';
-import './App.css';
-import Header from './components/Header';
-import AddTask from './components/AddTask';
-import ShowTask from './components/ShowTask';
+import Home from "./pages/Home";
+import { useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Header from "./components/Header";
+import Tasks from "./pages/Tasks";
+import Categories from "./pages/Categories";
+import About from "./pages/About";
+import Contactus from "./pages/Contactus";
+import Settings from "./pages/Settings";
+import Footer from "./components/Footer"; // Import Footer component
 
 function App() {
-  const [task, setTask] = useState("");
-  const [tasklist, setTasklist] = useState(JSON.parse(localStorage.getItem('tasklist')) || []);
-  const [editid, setEditid] = useState(0);
-  const [theme, setTheme] = useState(JSON.parse(localStorage.getItem('theme')) || "medium");
+  const [tasklist, setTasklist] = useState(
+    JSON.parse(localStorage.getItem("tasklist")) || []
+  );
+  const [theme, setTheme] = useState("light");
 
-  const handleSubmit = (event) => {
-    event.preventDefault();    
+  // State for user credentials
+  const [user, setUser] = useState(
+    JSON.parse(localStorage.getItem("user")) || null
+  );
 
-    if(editid){
-      const date = new Date();
-      const selectedTask = tasklist.find(task => task.id === editid);
-      const updateTask = tasklist.map((e) => (e.id === selectedTask.id ? (e = {id: e.id, name: task, time: `${date.toLocaleTimeString()} ${date.toLocaleDateString()}`}) : {id: e.id, name: e.name, time: e.time}));
-      setTasklist(updateTask);
-      setEditid(0);
-      setTask("");
-      return;
-    }
-
-    if(task){
-      const date = new Date();
-      setTasklist([...tasklist, {id: date.getTime(), name: task, time: `${date.toLocaleTimeString()} ${date.toLocaleDateString()}`}]);
-      setTask("");
-    }
-
-  }
-
-  const handleEdit = (id) => {
-    const selectedTask = tasklist.find(task => task.id === id);
-    setTask(selectedTask.name);
-    setEditid(id);
-  }
-
-  const handleDelete = (id) => {
-    const updatedTasklist = tasklist.filter(task => task.id !== id);
-    setTasklist(updatedTasklist);
-  }
-
-  useEffect(() => {
-    localStorage.setItem('tasklist', JSON.stringify(tasklist));
-  }, [tasklist]);
-
-  useEffect(() => {
-    localStorage.setItem('theme', JSON.stringify(theme));
-  }, [theme]);
+  // Save user details in localStorage whenever updated
+  const updateUser = (newUser) => {
+    setUser(newUser);
+    localStorage.setItem("user", JSON.stringify(newUser));
+  };
 
   return (
-    <div className={"App " + theme}>
-      <div className="container">
-        <Header setTheme={setTheme} theme={theme}>
-          Taskmate
-        </Header>
-        <AddTask handleSubmit={handleSubmit} editid={editid} task={task} setTask={setTask}/>
-        <ShowTask tasklist={tasklist} setTasklist={setTasklist} handleEdit={handleEdit} handleDelete={handleDelete}/>
+    <Router>
+      <div className={`App ${theme}`}>
+        <Header theme={theme} setTheme={setTheme}>Task Manager</Header>
+        <Routes>
+          <Route path="/" element={<Home tasklist={tasklist} />} />
+          <Route path="/tasks" element={<Tasks />} />
+          <Route path="/categories" element={<Categories tasklist={tasklist} />} />
+          <Route
+            path="/settings"
+            element={
+              <Settings
+                theme={theme}
+                setTheme={setTheme}
+                user={user}
+                setUser={updateUser}
+              />
+            }
+          />
+          <Route path="/about" element={<About />} />
+          <Route path="/contactus" element={<Contactus />} />
+        </Routes>
+        <Footer /> {/* Footer added here */}
       </div>
-    </div>
+    </Router>
   );
 }
 

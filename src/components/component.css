@@ -1,0 +1,50 @@
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+  }
+  
+  .team-member h3 {
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .team-member p {
+    font-size: 1rem;
+    color: #555;
+  }
+
+  .about-section h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+  
+  .section-content {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  .about-section ul {
+    font-size: 1.2rem;
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .about-section ul li {
+    margin: 0.5rem 0;
+    padding-left: 1rem;
+    position: relative;
+  }
+  
+  .about-section ul li::before {
+    content: '✔';
+    color: #4e73df;
+    position: absolute;
+    left: 0;
+    font-size: 1.5rem;
+  }
+  

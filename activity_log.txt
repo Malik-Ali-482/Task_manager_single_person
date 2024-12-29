@@ -1,0 +1,20 @@
+[2024-12-28 19:17:59] Blocked: www.facebook.com
+[2024-12-28 19:19:11] Blocked (News): www.cnn.com
+[2024-12-28 19:19:11] Blocked (News): www.bbc.com
+[2024-12-28 19:19:11] Blocked (News): www.nytimes.com
+[2024-12-28 19:19:11] Blocked (News): www.reuters.com
+[2024-12-28 19:19:11] Blocked (News): www.foxnews.com
+[2024-12-28 19:20:05] Temporarily Blocked: www.foxnews.com
+[2024-12-28 19:20:05] Temporarily Blocked: www.reuters.com
+[2024-12-28 19:20:05] Temporarily Blocked: www.cnn.com
+[2024-12-28 19:20:05] Temporarily Blocked: www.nytimes.com
+[2024-12-28 19:20:05] Temporarily Blocked: www.bbc.com
+[2024-12-28 19:20:05] Temporarily Blocked: www.facebook.com
+[2024-12-28 19:20:05] Temporarily Blocked: www.daraz.pk
+[2024-12-28 19:20:35] Unblocked (Temporary): www.foxnews.com
+[2024-12-28 19:20:35] Unblocked (Temporary): www.reuters.com
+[2024-12-28 19:20:36] Unblocked (Temporary): www.cnn.com
+[2024-12-28 19:20:36] Unblocked (Temporary): www.nytimes.com
+[2024-12-28 19:20:36] Unblocked (Temporary): www.bbc.com
+[2024-12-28 19:20:36] Unblocked (Temporary): www.facebook.com
+[2024-12-28 19:20:36] Unblocked (Temporary): www.daraz.pk
